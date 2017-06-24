@@ -30,6 +30,7 @@ const dotenvFiles = [
 
 dotenvFiles.forEach(dotenvFile => {
   if (fs.existsSync(dotenvFile)) {
+    console.log(dotenvFile)
     require("dotenv").config({
       path: dotenvFile,
     })

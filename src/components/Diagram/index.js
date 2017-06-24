@@ -22,8 +22,7 @@ const config = {
 const random = (min, max) => Math.floor((Math.random() * (max - min)) + min)
 
 const colors = [
-  "#1abc9c", "#2ecc71", "#3498db", "#9b59b6",
-  "#34495e", "#e74c3c", "#4caf50"
+  "lightblue"
 ]
 
 const MockNode = ({onClick}) => (
@@ -134,7 +133,6 @@ export default class NodeGraph extends Component {
     Object.values(this.model.nodes).forEach(item => {
       this.model.nodes[item.id].locked = false
     })
-    // this.model.nodes[result[0].id].locked = true
   }
 
   save = () => {
@@ -161,14 +159,6 @@ export default class NodeGraph extends Component {
       <div className={s.btngroup}>
         <button onClick={this.save}>Save</button>
         <button onClick={this.load}>Load</button>
-        <button onClick={this.addDiamond}>Add Diamond</button>
-      </div>
-      <div className={s.search}>
-        <input
-          placeholder="Search for a node..."
-          onChange={this.onNodeSearch}
-          onBlur={this.unlockNodes}
-        />
       </div>
       <div className="nodes-store">
         <MockNode onClick={this.add} />

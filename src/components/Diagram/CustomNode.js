@@ -74,7 +74,7 @@ class NodeEditingWidget extends Component {
   }
 
   close = () => this.setState({isEditing: false})
-  open = () => this.setState({isEditing: true})
+  open = () => this.setState({isEditing: !this.state.isEditing})
 
   render() {
     const {node} = this.props

@@ -26,7 +26,8 @@ const env = getClientEnvironment(publicUrl)
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
-if (env.stringified["process.env"].NODE_ENV !== "'production'") {
+if (env.stringified["process.env"].NODE_ENV !== '"production"') {
+  console.warn(env)
   throw new Error("Production builds must have NODE_ENV=production.")
 }
 
@@ -41,6 +42,19 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
   ? // Making sure that the publicPath goes back to to build folder.
     { publicPath: Array(cssFilename.split("/").length).join("../") }
   : {}
+
+const postcssPlugins = () => [
+  require("postcss-flexbugs-fixes"),
+  autoprefixer({
+    browsers: [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 9", // React doesn"t support IE8 anyway
+    ],
+    flexbox: "no-2009",
+  }),
+]
 
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
@@ -105,20 +119,20 @@ module.exports = {
 
       // First, run the linter.
       // It"s important to do this before Babel processes the JS.
-      {
-        test: /\.(js|jsx)$/,
-        enforce: "pre",
-        use: [
-          {
-            options: {
-              formatter: eslintFormatter,
-
-            },
-            loader: require.resolve("eslint-loader"),
-          },
-        ],
-        include: paths.appSrc,
-      },
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   enforce: "pre",
+      //   use: [
+      //     {
+      //       options: {
+      //         formatter: eslintFormatter,
+      //
+      //       },
+      //       loader: require.resolve("eslint-loader"),
+      //     },
+      //   ],
+      //   include: paths.appSrc,
+      // },
       // ** ADDING/UPDATING LOADERS **
       // The "file" loader handles all assets unless explicitly excluded.
       // The `exclude` list *must* be updated with every change to loader extensions.
@@ -132,6 +146,7 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
+          /\.(scss|sass)$/,
           /\.json$/,
           /\.bmp$/,
           /\.gif$/,
@@ -191,20 +206,43 @@ module.exports = {
                   loader: require.resolve("postcss-loader"),
                   options: {
                     ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
-                    plugins: () => [
-                      require("postcss-flexbugs-fixes"),
-                      autoprefixer({
-                        browsers: [
-                          ">1%",
-                          "last 4 versions",
-                          "Firefox ESR",
-                          "not ie < 9", // React doesn"t support IE8 anyway
-                        ],
-                        flexbox: "no-2009",
-                      }),
-                    ],
+                    plugins: postcssPlugins,
                   },
                 },
+              ],
+            },
+            extractTextPluginOptions
+          )
+        ),
+        // Note: this won"t work without `new ExtractTextPlugin()` in `plugins`.
+      },
+      {
+        test: /\.(scss|sass)$/,
+        loader: ExtractTextPlugin.extract(
+          Object.assign(
+            {
+              fallback: require.resolve("style-loader"),
+              use: [
+                {
+                  loader: require.resolve("css-loader"),
+                  options: {
+                    importLoaders: 1,
+                    modules: true,
+                    minimize: true,
+                    sourceMap: true,
+                    localIdentName: "[name]__[local]__[hash:base64:5]"
+                  },
+                },
+                {
+                  loader: require.resolve("postcss-loader"),
+                  options: {
+                    ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
+                    plugins: postcssPlugins,
+                  },
+                },
+                {
+                  loader: require.resolve("sass-loader")
+                }
               ],
             },
             extractTextPluginOptions
