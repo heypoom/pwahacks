@@ -1,6 +1,8 @@
 import React, {Component} from "react"
 import Dropzone from "react-dropzone"
 
+import parser from "../../core/parser"
+
 import s from "./FileReader.sass"
 
 export default class FileReader extends Component {
@@ -11,6 +13,7 @@ export default class FileReader extends Component {
       const reader = new window.FileReader()
       reader.onload = () => {
         this.setState({file: reader.result})
+        const tree = parser(reader.result)
       }
       reader.readAsText(file)
     })
