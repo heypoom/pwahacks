@@ -8,7 +8,7 @@ export default class FileReader extends Component {
 
   render = () => (
     <div className={s.root}>
-      <img src="/rocket.png" alt="" className={s.middleimg} />
+      <img src="/magnet.png" alt="" className={s.middleimg} />
       <h1>Upload your <b>webpack.config.js</b> here.</h1>
       <div className={s.code}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit,

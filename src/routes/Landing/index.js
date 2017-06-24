@@ -11,9 +11,13 @@ export default () => (
     <div className={s.topbar}>
       <h1>Pack<b>tastic</b><small>make webpack fantastic again!</small></h1>
     </div>
-    <main>
-      <FileReader />
-      <Terminal />
-    </main>
+    <div className={s.view}>
+      <nav className={s.sidebar}>
+        <Terminal />
+      </nav>
+      <main>
+        <FileReader />
+      </main>
+    </div>
   </div>
 )

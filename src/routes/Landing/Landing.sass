@@ -3,21 +3,35 @@
   // background: #7c4dff
 
   main
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-    width: 100%
-    min-height: calc(100vh - 3.5em)
+    flex: 3
+
+.view
+  display: flex
+  flex-direction: row
+  width: 100%
+  min-height: calc(100vh - 3.5em)
 
 .middleimg
   width: 10em
+
+.sidebar
+  flex: 1
+  height: 100vh
+  background: white
+  position: relative
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
+
+  @media screen and (max-width: 800px)
+    display: none
 
 .topbar
   display: flex
   align-items: center
   justify-content: flex-start
   padding-left: 8%
+  position: absolute
+  top: 0
+  z-index: 1
   width: 100%
   height: 3.5em
   background: #7c4dff
