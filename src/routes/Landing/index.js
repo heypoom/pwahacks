@@ -1,9 +1,12 @@
 import React from "react"
 
-import Diagram from "../../components/Diagram"
 import FileReader from "../../components/FileReader"
+import Initiate from "../../components/Initiate"
+import Terminal from "../../components/Terminal"
 
 import s from "./Landing.sass"
+
+// {/* <img src="/rocket.png" alt="" className={s.middleimg} /> */}
 
 export default () => (
   <div className={s.root}>
@@ -11,7 +14,7 @@ export default () => (
       <h1>Pack<b>tastic</b><small>make webpack fantastic again!</small></h1>
     </div>
     <main>
-      <FileReader />
+      <Terminal />
     </main>
   </div>
 )

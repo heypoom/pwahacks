@@ -1,13 +1,11 @@
 {
   "short_name": "Packtastic",
-  "name": "Make webpack fantastic again!",
-  "icons": [
-    {
-      "src": "magnet.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
+  "name": "Packtastic: Make Webpack Fantastic!",
+  "icons": [{
+    "src": "magnet.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#455a64",
