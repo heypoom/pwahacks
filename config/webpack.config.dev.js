@@ -121,17 +121,17 @@ module.exports = {
 
       // First, run the linter.
       // It"s important to do this before Babel processes the JS.
-      {
-        test: /\.(js|jsx)$/,
-        enforce: "pre",
-        use: [{
-          options: {
-            formatter: eslintFormatter
-          },
-          loader: require.resolve("eslint-loader")
-        }],
-        include: paths.appSrc,
-      },
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   enforce: "pre",
+      //   use: [{
+      //     options: {
+      //       formatter: eslintFormatter
+      //     },
+      //     loader: require.resolve("eslint-loader")
+      //   }],
+      //   include: paths.appSrc,
+      // },
       {
         test: /\.(sass|scss)$/,
         use: [{
@@ -141,8 +141,7 @@ module.exports = {
           options: {
             importLoaders: 1, // 10
             modules: true,
-            localIdentName: "[name]__[local]__[hash:base64:5]",
-            // root: "."
+            localIdentName: "[name]__[local]__[hash:base64:5]"
           },
         }, {
           loader: "postcss-loader",
@@ -222,7 +221,7 @@ module.exports = {
           {
             loader: require.resolve("postcss-loader"),
             options: {
-              ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
+              ident: "postcss",
               plugins: postcssPlugins
             }
           }

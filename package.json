@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "fuzzysearch": "^1.0.3",
+    "lodash.filter": "^4.6.0",
+    "lodash.merge": "^4.6.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "storm-react-diagrams": "^2.4.9"
   },
   "devDependencies": {
     "autoprefixer": "7.1.0",

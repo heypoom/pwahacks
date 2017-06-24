@@ -1,5 +1,7 @@
 import React from "react"
 
+import Diagram from "../Diagram"
+
 import s from "./App.sass"
 
 export default () => (
@@ -8,7 +10,7 @@ export default () => (
       Hello World
     </div>
     <main>
-      To get started, edit and save to reload.
+      <Diagram />
     </main>
   </div>
 )
