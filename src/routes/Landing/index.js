@@ -15,7 +15,7 @@ export default () => (
       <nav className={s.sidebar}>
         <Terminal />
       </nav>
-      <main>
+      <main className={s.main}>
         <FileReader />
       </main>
     </div>

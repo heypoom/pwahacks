@@ -10,7 +10,8 @@
     "react-dom": "^15.6.1",
     "react-dropzone": "^3.13.3",
     "react-router-dom": "^4.1.1",
-    "storm-react-diagrams": "^2.4.9"
+    "storm-react-diagrams": "^2.4.9",
+    "treehugger": "^0.0.2"
   },
   "devDependencies": {
     "autoprefixer": "7.1.0",

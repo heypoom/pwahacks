@@ -6,14 +6,23 @@ import s from "./FileReader.sass"
 export default class FileReader extends Component {
   state = {file: ""}
 
+  drop = e => {
+    e.forEach(file => {
+      const reader = new window.FileReader()
+      reader.onload = () => {
+        this.setState({file: reader.result})
+      }
+      reader.readAsText(file)
+    })
+  }
+
   render = () => (
-    <div className={s.root}>
+    <Dropzone className={s.root} onDrop={this.drop}>
       <img src="/magnet.png" alt="" className={s.middleimg} />
       <h1>Upload your <b>webpack.config.js</b> here.</h1>
       <div className={s.code}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        {this.state.file}
       </div>
-    </div>
+    </Dropzone>
   )
 }
