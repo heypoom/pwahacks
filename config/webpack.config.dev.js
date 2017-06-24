@@ -110,15 +110,23 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         enforce: "pre",
-        use: [
-          {
-            options: {
-              formatter: eslintFormatter,
-
-            },
-            loader: require.resolve("eslint-loader"),
+        use: [{
+          options: {
+            formatter: eslintFormatter
           },
-        ],
+          loader: require.resolve("eslint-loader")
+        }],
+        include: paths.appSrc,
+      },
+      {
+        test: /\.(sass|scss)$/,
+        use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "sass-loader" // compiles Sass to CSS
+        }],
         include: paths.appSrc,
       },
       // ** ADDING/UPDATING LOADERS **
@@ -135,6 +143,7 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
+          /\.(sass|scss)$/,
           /\.json$/,
           /\.bmp$/,
           /\.gif$/,
