@@ -3,12 +3,12 @@
   "name": "Make webpack fantastic again!",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "192x192",
+      "src": "magnet.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#455a64",
   "background_color": "#455a64"

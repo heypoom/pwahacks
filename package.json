@@ -56,12 +56,14 @@
     "webpack": "2.6.1",
     "webpack-dev-server": "2.4.5",
     "webpack-manifest-plugin": "1.1.0",
+    "webpack-plugin-critical": "^1.0.0",
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "deploy": "node scripts/build.js && firebase deploy --only hosting"
   },
   "jest": {
     "collectCoverageFrom": [

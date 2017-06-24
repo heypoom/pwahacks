@@ -12,7 +12,6 @@ export default () => (
     </div>
     <main>
       <FileReader />
-      <Diagram />
     </main>
   </div>
 )

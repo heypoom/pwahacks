@@ -9,12 +9,8 @@ export default class FileReader extends Component {
 
   render = () => (
     <div className={s.root}>
-      <h1>Upload your webpack.config.js here.</h1>
-      <code>
-        <pre>
-          {this.state.file}
-        </pre>
-      </code>
+      <img src="/magnet.png" alt="" />
+      <h1>Upload your <b>webpack.config.js</b> here.</h1>
     </div>
   )
 }
