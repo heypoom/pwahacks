@@ -1,4 +1,5 @@
 const autoprefixer = require("autoprefixer")
+const flexbugs = require("postcss-flexbugs-fixes")
 const path = require("path")
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
@@ -17,8 +18,22 @@ const publicPath = "/"
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
 const publicUrl = ""
+
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl)
+
+const postcssPlugins = () => [
+  flexbugs,
+  autoprefixer({
+    browsers: [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 9", // React doesn"t support IE8 anyway
+    ],
+    flexbox: "no-2009",
+  })
+]
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -84,7 +99,6 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     extensions: [".js", ".json", ".jsx"],
     alias: {
-
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       "react-native": "react-native-web",
@@ -121,11 +135,23 @@ module.exports = {
       {
         test: /\.(sass|scss)$/,
         use: [{
-          loader: "style-loader" // creates style nodes from JS strings
+          loader: "style-loader"
         }, {
-          loader: "css-loader" // translates CSS into CommonJS
+          loader: "css-loader",
+          options: {
+            importLoaders: 1, // 10
+            modules: true,
+            localIdentName: "[name]__[local]__[hash:base64:5]",
+            // root: "."
+          },
         }, {
-          loader: "sass-loader" // compiles Sass to CSS
+          loader: "postcss-loader",
+          options: {
+            ident: "postcss",
+            plugins: postcssPlugins
+          }
+        }, {
+          loader: "sass-loader"
         }],
         include: paths.appSrc,
       },
@@ -172,7 +198,6 @@ module.exports = {
         include: paths.appSrc,
         loader: require.resolve("babel-loader"),
         options: {
-
           // This is a feature of `babel-loader` for webpack (not Babel itself).
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
@@ -198,20 +223,9 @@ module.exports = {
             loader: require.resolve("postcss-loader"),
             options: {
               ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: () => [
-                require("postcss-flexbugs-fixes"),
-                autoprefixer({
-                  browsers: [
-                    ">1%",
-                    "last 4 versions",
-                    "Firefox ESR",
-                    "not ie < 9", // React doesn"t support IE8 anyway
-                  ],
-                  flexbox: "no-2009",
-                }),
-              ],
-            },
-          },
+              plugins: postcssPlugins
+            }
+          }
         ],
       },
       // ** STOP ** Are you adding a new loader?

@@ -1,10 +1,10 @@
 import React from "react"
 
-import "./App.sass"
+import s from "./App.sass"
 
 export default () => (
   <div>
-    <div className="header">
+    <div className={s.header}>
       Hello World
     </div>
     <main>
