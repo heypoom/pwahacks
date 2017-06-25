@@ -21,10 +21,14 @@ const ph = (
   <h1>Upload your <b>webpack.config.js</b> here!</h1>
 )
 
-const FileReader = ({placeholder = ph, file, setFile: set}) => (
+const sp = (
+  <h1>That is <b>Awesome!</b> Go ahead and have fun!</h1>
+)
+
+const FileReader = ({success = sp, prompt = ph, file, setFile: set}) => (
   <Dropzone className={s.root} onDrop={e => drop(e, set)}>
     <img src="/magnet.png" alt="" className={s.middleimg} />
-    {!file && placeholder}
+    {file ? success : prompt}
   </Dropzone>
 )
 

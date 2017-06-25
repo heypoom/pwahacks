@@ -1,12 +1,10 @@
 import React from "react"
-import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+import {BrowserRouter as Router} from "react-router-dom"
 
-import Landing from "./Landing"
+import Workspace from "../components/Workspace"
 
 export default () => (
   <Router>
-    <div>
-      <Route exact path="/" component={Landing} />
-    </div>
+    <Workspace />
   </Router>
 )
