@@ -13,18 +13,25 @@ import s from "./Code.sass"
 
 const CodeEditor = ({code, setCode: onChange}) => (
   <div className={s.root}>
-    <AceEditor
-      mode="javascript"
-      theme="twilight"
-      name="codeeditor"
-      fontSize="1.05em"
-      className={s.code}
-      editorProps={{$blockScrolling: Infinity}}
-      value={code}
-      onChange={onChange}
-      enableBasicAutocompletion
-      enableLiveAutocompletion
-    />
+    {code ? (
+      <AceEditor
+        mode="javascript"
+        theme="twilight"
+        name="codeeditor"
+        fontSize="1.05em"
+        className={s.code}
+        editorProps={{$blockScrolling: Infinity}}
+        value={code}
+        onChange={onChange}
+        enableBasicAutocompletion
+        enableLiveAutocompletion
+      />
+    ) : (
+      <div className={s.emptyCode}>
+        <h1>The code is not loaded or it is empty.</h1>
+        <h2>Please upload the code or pick a template on the "new" tab.</h2>
+      </div>
+    )}
   </div>
 )
 

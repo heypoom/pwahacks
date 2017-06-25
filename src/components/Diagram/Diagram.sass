@@ -1,12 +1,18 @@
 .root
+  display: flex
+  flex-direction: column
   position: relative
   overflow: hidden
   padding: 1.85em
   min-height: 70vh
-  height: 200vh
+  height: 100em
 
   @media screen and (max-width: 800px)
     padding: 1.45em
+
+.group
+  display: flex
+  justify-content: flex-start
 
 .parserError, .emptyBlock
   display: flex

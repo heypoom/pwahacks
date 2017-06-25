@@ -36,9 +36,23 @@ const Diagram = ({code}) => {
   return (
     <div className={s.root}>
       {
-        parsed.map((block, i) => (
-          <Block x={0} y={i * 15} text={block.type} key={i} />
-        ))
+        parsed.map((block, i) => {
+          if (block.length > 1) {
+            return (
+              <Draggable defaultPosition={{x: 0, y: i * 15}} key={i} >
+                <div className={s.group}>
+                  {block.map(item => (
+                    <Block g y={0} text={item} key={item} />
+                  ))}
+                </div>
+              </Draggable>
+            )
+          }
+
+          return (
+            <Block x={0} y={i * 15} text={block[0].type} key={i} />
+          )
+        })
       }
     </div>
   )

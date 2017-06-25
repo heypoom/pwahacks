@@ -44,7 +44,7 @@ const Workspace = ({sidebar, toggleSidebar: toggle}) => (
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/new" />} />
             <Route path="/new" component={Create} />
-            <Route path="/build" component={Diagram} />
+            <Route path="/visual" component={Diagram} />
             <Route path="/code" component={Code} />
             <Route path="/test" component={Visual} />
             <Route component={NotFound} />

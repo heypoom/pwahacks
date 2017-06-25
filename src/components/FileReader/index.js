@@ -22,7 +22,7 @@ const ph = (
 )
 
 const sp = (
-  <h1>That is <b>Awesome!</b> Go ahead and have fun!</h1>
+  <h1>Great! Go to other tabs and Explore.</h1>
 )
 
 const FileReader = ({success = sp, prompt = ph, file, setCode: set}) => (
