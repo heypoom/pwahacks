@@ -6,7 +6,6 @@ import "brace/ext/language_tools"
 import "brace/theme/twilight"
 
 import "brace/mode/javascript"
-import "brace/snippets/javascript"
 
 import {setCode} from "../../ducks/app"
 
@@ -18,9 +17,8 @@ const CodeEditor = ({code, setCode: onChange}) => (
       mode="javascript"
       theme="twilight"
       name="codeeditor"
-      fontSize="1.1em"
+      fontSize="1.05em"
       className={s.code}
-      setOptions={{enableSnippets: true}}
       editorProps={{$blockScrolling: Infinity}}
       value={code}
       onChange={onChange}
