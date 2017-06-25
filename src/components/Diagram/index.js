@@ -15,7 +15,7 @@ export default () => (
       <div className={s.inner}>
         {
           blocks.map((block, i) => (
-            <Block x={rand(0, 700)} y={rand(0, 500)} key={i} {...block} />
+            <Block x={rand(0, 0)} y={rand(0, 0)} key={i} {...block} />
           ))
         }
       </div>
