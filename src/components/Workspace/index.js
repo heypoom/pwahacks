@@ -37,7 +37,7 @@ const Workspace = ({sidebar, toggleSidebar: toggle}) => (
       </nav>
       <main className={s.main}>
         <div className={s.topbar}>
-          <h1>Pack=><b>tastic</b><small>dive deep in JavaScript</small></h1>
+          <h1>Pack=>t<b>ast</b>ic<small>dive deep in JavaScript</small></h1>
         </div>
         <section className={s.workspace}>
           <Tabs />
@@ -46,7 +46,7 @@ const Workspace = ({sidebar, toggleSidebar: toggle}) => (
             <Route path="/new" component={Create} />
             <Route path="/visual" component={Diagram} />
             <Route path="/code" component={Code} />
-            <Route path="/test" component={Visual} />
+            <Route path="/play" component={Visual} />
             <Route component={NotFound} />
           </Switch>
         </section>
