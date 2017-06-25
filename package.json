@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "fuzzysearch": "^1.0.3",
-    "lodash.filter": "^4.6.0",
-    "lodash.merge": "^4.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-draggable": "^2.2.6",
     "react-dropzone": "^3.13.3",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "storm-react-diagrams": "^2.4.9",
-    "treehugger": "^0.0.2"
+    "recast": "^0.12.5",
+    "redux": "^3.7.0",
+    "redux-devtools-extension": "^2.13.2"
   },
   "devDependencies": {
     "autoprefixer": "7.1.0",
