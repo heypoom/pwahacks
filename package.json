@@ -9,8 +9,11 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-dropzone": "^3.13.3",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "recast": "^0.12.5",
+    "redux": "^3.7.0",
+    "redux-devtools-extension": "^2.13.2",
     "storm-react-diagrams": "^2.4.9"
   },
   "devDependencies": {

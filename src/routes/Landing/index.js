@@ -1,8 +1,10 @@
 import React from "react"
 
 import FileReader from "../../components/FileReader"
-import Initiate from "../../components/Initiate"
 import Terminal from "../../components/Terminal"
+
+import Diagram from "../../components/Diagram"
+import Block from "../../components/Block"
 
 import s from "./Landing.sass"
 
@@ -16,7 +18,14 @@ export default () => (
         <Terminal />
       </nav>
       <main className={s.main}>
-        <FileReader />
+        <section className={s.center}>
+          <FileReader />
+        </section>
+        <section>
+          <Diagram>
+            <Block />
+          </Diagram>
+        </section>
       </main>
     </div>
   </div>

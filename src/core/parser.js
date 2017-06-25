@@ -10,8 +10,6 @@ export default input => {
     return e
   }
 
-  console.log(code)
-
   code.program.body.forEach(item => {
     console.log(`--- LINE [${item.loc.start.column}:${item.loc.start.line} - ${item.loc.end.column}:${item.loc.end.line}]---`)
 
