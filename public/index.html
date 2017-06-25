@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="author" content="#PacktasticTEAM" />
     <meta name="description" content="Let's make Webpack Fantastic Again!" />
@@ -33,7 +33,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Packtastic | Make Webpack Fantastic Again!</title>
+    <title>Packtastic | Dive Deep in JavaScript</title>
     <style>
       body {
         margin: 0;
@@ -47,6 +47,7 @@
         text-align: center;
         background: #7c4dff;
         min-height: 100vh;
+        padding: 1.5em;
       }
 
       .loader-mock-top {
@@ -60,12 +61,10 @@
       .loader-text {
         margin: 0;
         color: white;
-        font-family: "Fira Code", "Roboto", Helvetica, sans-serif;
+        font-family: monospace;
+        font-size: 2.5em;
+        line-height: 1.6em;
         font-weight: 300;
-      }
-
-      .loader-text b {
-        font-weight: 400;
       }
     </style>
   </head>
@@ -76,7 +75,7 @@
     <div id="root">
       <div id="loader-splash">
         <div class="loader-mock-top"></div>
-        <h1 class="loader-text">Pack<b>tastic</b> is Loading...</h1>
+        <h1 class="loader-text">Packtastic is Loading...</h1>
       </div>
     </div>
     <!--
@@ -89,5 +88,11 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <style>
+      @font-face {
+        font-family: "Fira Code";
+        src: url(https://cdn.rawgit.com/tonsky/FiraCode/master/distr/ttf/FiraCode-Regular.ttf);
+      }
+    </style>
   </body>
 </html>

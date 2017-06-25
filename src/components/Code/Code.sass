@@ -1,0 +1,43 @@
+.root
+  width: 100%
+  height: 100%
+  min-height: 75vh
+  background: #374046
+  // background: #efefef
+  // padding: 1.5em 2em
+
+.code
+  color: white
+  background: transparent !important
+  font-family: "Fira Code", monospace
+  line-height: 1.5em
+  font-weight: 300
+  white-space: pre-wrap
+  width: 100% !important
+  height: 100% !important
+  min-height: 500px
+
+.emptyCode
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  background: #7c4dff
+  min-height: 75vh
+
+  h1, h2
+    color: white
+    font-weight: 300
+    text-align: center
+
+\:global
+   .ace_editor.ace_dark.ace-twilight
+    .ace_gutter
+      color: white
+      background: rgba(0, 0, 0, 0.05) !important
+
+    .ace_gutter-active-line
+      background: rgba(0, 0, 0, 0.15) !important
+
+    .ace_scrollbar
+      display: none

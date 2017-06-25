@@ -4,7 +4,6 @@
   width: 100%
   background: #2d2d30
   color: #fff
-  // overflow-y: scroll
 
   .clear
     position: absolute
@@ -16,11 +15,26 @@
     cursor: pointer
 
 .console
-  height: 10em
+  height: 18em
   padding: 1em
+  overflow-y: scroll
 
-  .log
-    line-height: 1.6em
+  &::-webkit-scrollbar
+    width: 0px
+    background: transparent
+
+.log
+  font-size: 0.95em
+  line-height: 1.4em
+
+.log.info
+  color: white
+
+.log.return
+  color: grey
+
+.log.error
+  color: #e74c3c
 
 .term
   width: 100%
@@ -30,5 +44,5 @@
   border: none
   color: #fff
   padding: .6em 1em
-  font-family: monospace
-  font-size: 1.15em
+  font-family: "Fira Code", monospace
+  font-size: 1em

@@ -1,3 +1,5 @@
+@import "../../assets/variables.sass"
+
 .root
   display: flex
   align-items: center
@@ -5,13 +7,20 @@
   flex-direction: column
   position: relative
   background: white
-  padding: 1.4em 1.7em
+  padding: 1em 1.6em
   color: #777
-  box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6)
-  // box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
-  border-bottom: 2px solid #7c4dff
-  margin-top: 3em
+  box-shadow: $zFlow
+  border-bottom: 3px solid $accent
+  margin-top: 3.8em
   cursor: pointer
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  user-select: none
+
+  &:active
+    border-bottom: 3px solid #9C27B0
+
+  &:hover
+    border-bottom: 3px solid $primary
 
   img
     position: absolute
@@ -25,17 +34,8 @@
 
   h1
     margin: 0
-    margin-top: 0.5em
+    margin-top: 0.8em
     font-weight: 300
     text-align: center
     line-height: 1.4em
     font-size: 1.6em
-
-.code
-  margin-top: 0.8em
-  font-family: monospace
-  line-height: 1.8em
-  max-width: 550px
-  white-space: pre-wrap
-  max-height: 300px
-  overflow-y: scroll
