@@ -37,7 +37,7 @@ const Workspace = ({sidebar, toggleSidebar: toggle}) => (
       </nav>
       <main className={s.main}>
         <div className={s.topbar}>
-          <h1>Pack=><b>tastic</b><small>make JavaScript fantastic again!</small></h1>
+          <h1>Pack=><b>tastic</b><small>dive deep in JavaScript</small></h1>
         </div>
         <section className={s.workspace}>
           <Tabs />
