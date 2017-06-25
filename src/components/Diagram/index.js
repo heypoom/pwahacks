@@ -7,6 +7,10 @@ import s from "./Diagram.sass"
 export default () => (
   <div className={s.root}>
     <div className={s.top} />
-    <Block />
+    {
+      [...Array(9)].map(() => (
+        <Block />
+      ))
+    }
   </div>
 )
