@@ -16,6 +16,14 @@ const NotFound = () => (
   </div>
 )
 
+const Create = () => (
+  <div className={s.initial}>
+    <div className={s.contain}>
+      <FileReader />
+    </div>
+  </div>
+)
+
 const Workspace = () => (
   <div className={s.root}>
     <div className={s.topbar}>
@@ -29,14 +37,8 @@ const Workspace = () => (
         <section className={s.workspace}>
           <Tabs />
           <Switch>
-            <Route exact path="/" render={() => <Redirect to="/upload" />} />
-            <Route path="/create" component={() => (
-              <div className={s.initial}>
-                <div className={s.contain}>
-                  <FileReader />
-                </div>
-              </div>
-            )} />
+            <Route exact path="/" render={() => <Redirect to="/create" />} />
+            <Route path="/create" component={Create} />
             <Route path="/diagram" component={Diagram} />
             <Route path="/code" component={() => <div>Code</div>} />
             <Route component={NotFound} />
