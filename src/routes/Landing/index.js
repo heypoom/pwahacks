@@ -12,7 +12,7 @@ import s from "./Landing.sass"
 const Landing = ({file}) => (
   <div className={s.root}>
     <div className={s.topbar}>
-      <h1>Pack<b>tastic</b><small>make webpack fantastic again!</small></h1>
+      <h1>Pack=><b>tastic</b><small>make webpack fantastic again!</small></h1>
     </div>
     <div className={s.view}>
       <nav className={s.sidebar}>
@@ -21,9 +21,7 @@ const Landing = ({file}) => (
       <main className={s.main}>
         {(file || true) ? (
           <section>
-            <Diagram>
-              <Block />
-            </Diagram>
+            <Diagram />
           </section>
         ) : (
           <section className={s.initial}>
