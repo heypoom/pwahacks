@@ -1,4 +1,5 @@
 import React from "react"
+import c from "classnames"
 import {connect} from "react-redux"
 import {withRouter, Route, Redirect, Switch} from "react-router-dom"
 
@@ -9,6 +10,8 @@ import Create from "../Create"
 import Code from "../Code"
 import Diagram from "../Diagram"
 
+import {toggleSidebar} from "../../ducks/app"
+
 import s from "./Workspace.sass"
 
 const NotFound = () => (
@@ -17,10 +20,14 @@ const NotFound = () => (
   </div>
 )
 
-const Workspace = () => (
+const fabIcon = `
+M20.719 7.031l-1.828 1.828-3.75-3.75 1.828-1.828c0.375-0.375 1.031-0.375 1.406 0l2.344 2.344c0.375 0.375 0.375 1.031 0 1.406zM3 17.25l11.063-11.063 3.75 3.75-11.063 11.063h-3.75v-3.75z
+`
+
+const Workspace = ({sidebar, toggleSidebar: toggle}) => (
   <div className={s.root}>
     <div className={s.view}>
-      <nav className={s.sidebar}>
+      <nav className={c(s.sidebar, sidebar && s.toggled)}>
         <div className={s.titlebar}>
           Packtastic
           <div className={s.buttons} />
@@ -36,17 +43,23 @@ const Workspace = () => (
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/new" />} />
             <Route path="/new" component={Create} />
-            <Route path="/edit" component={Diagram} />
+            <Route path="/build" component={Diagram} />
             <Route path="/code" component={Code} />
-            <Route path="/visual" component={() => <h1>Visualize</h1>} />
+            <Route path="/test" component={() => <h1>Visualization & Explanation</h1>} />
             <Route component={NotFound} />
           </Switch>
         </section>
       </main>
+      <svg className={s.fab} viewBox="0 0 24 24" onClick={toggle}>
+        <path d={fabIcon} />
+      </svg>
     </div>
   </div>
 )
 
-const mapStateToProps = state => ({file: state.app.code})
+const mapStateToProps = state => ({
+  file: state.app.code,
+  sidebar: state.app.sidebar
+})
 
-export default withRouter(connect(mapStateToProps)(Workspace))
+export default withRouter(connect(mapStateToProps, {toggleSidebar})(Workspace))
