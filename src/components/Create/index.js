@@ -6,14 +6,14 @@ import FileReader from "../FileReader"
 import {setCode} from "../../ducks/app"
 import tmpl from "../../core/template"
 
-import s from "./Initiate.sass"
+import s from "./Create.sass"
 
 const Create = ({setCode: set}) => (
   <div className={s.initial}>
     <section className={s.welcome}>
       <h1>{"Welcome to Pack=>Tastic!"}</h1>
       <p>
-        {"Webpack is scary? Fear no more! We're here to help you with the agony of webpack."}
+        {"JavaScript is scary? Fear no more! We're here to make it Fantastic again!"}
       </p>
     </section>
     <section className={s.upload}>

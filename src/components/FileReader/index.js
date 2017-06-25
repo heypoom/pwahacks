@@ -18,7 +18,7 @@ const drop = (e, set) => {
 }
 
 const ph = (
-  <h1>Upload your <b>webpack.config.js</b> here!</h1>
+  <h1>Upload your <b>JavaScript</b> file here!</h1>
 )
 
 const sp = (

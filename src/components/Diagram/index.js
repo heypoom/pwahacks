@@ -1,5 +1,8 @@
 import React from "react"
+import {connect} from "react-redux"
 import Draggable from "react-draggable"
+
+import parse from "../../core/parser"
 
 import Block from "../Block"
 
@@ -7,18 +10,42 @@ import s from "./Diagram.sass"
 
 const rand = (min, max) => Math.floor((Math.random() * (max - min)))
 
-const blocks = [...Array(1)]
+const Diagram = ({code}) => {
+  const parsed = parse(code)
 
-export default () => (
-  <div className={s.root}>
-    <Draggable>
-      <div className={s.inner}>
-        {
-          blocks.map((block, i) => (
-            <Block x={rand(0, 0)} y={rand(0, 0)} key={i} {...block} />
-          ))
-        }
+  if (parsed instanceof Error) {
+    return (
+      <div className={s.parserError}>
+        <h1>Parser Error at line {parsed.lineNumber}, column {parsed.column}</h1>
+        <h2>{parsed.description}</h2>
       </div>
-    </Draggable>
-  </div>
-)
+    )
+  }
+
+  if (parsed.length === 0) {
+    return (
+      <div className={s.emptyBlock}>
+        <h1>The code is not loaded or it is empty.</h1>
+        <h2>Please upload the code or pick a template on the "new" tab.</h2>
+      </div>
+    )
+  }
+
+  console.log(parsed)
+
+  return (
+    <div className={s.root}>
+      {
+        parsed.map((block, i) => (
+          <Block x={0} y={i * 15} text={block.type} key={i} />
+        ))
+      }
+    </div>
+  )
+}
+
+const mapStateToProps = state => ({
+  code: state.app.code
+})
+
+export default connect(mapStateToProps)(Diagram)

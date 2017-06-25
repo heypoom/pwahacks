@@ -9,6 +9,7 @@ import Terminal from "../Terminal"
 import Create from "../Create"
 import Code from "../Code"
 import Diagram from "../Diagram"
+import Visual from "../Visual"
 
 import {toggleSidebar} from "../../ducks/app"
 
@@ -36,7 +37,7 @@ const Workspace = ({sidebar, toggleSidebar: toggle}) => (
       </nav>
       <main className={s.main}>
         <div className={s.topbar}>
-          <h1>Pack=><b>tastic</b><small>make webpack fantastic again!</small></h1>
+          <h1>Pack=><b>tastic</b><small>make JavaScript fantastic again!</small></h1>
         </div>
         <section className={s.workspace}>
           <Tabs />
@@ -45,7 +46,7 @@ const Workspace = ({sidebar, toggleSidebar: toggle}) => (
             <Route path="/new" component={Create} />
             <Route path="/build" component={Diagram} />
             <Route path="/code" component={Code} />
-            <Route path="/test" component={() => <h1>Visualization & Explanation</h1>} />
+            <Route path="/test" component={Visual} />
             <Route component={NotFound} />
           </Switch>
         </section>
