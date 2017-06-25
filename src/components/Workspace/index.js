@@ -6,6 +6,7 @@ import Tabs from "../Tabs"
 import Terminal from "../Terminal"
 
 import Create from "../Create"
+import Code from "../Code"
 import Diagram from "../Diagram"
 
 import s from "./Workspace.sass"
@@ -35,8 +36,9 @@ const Workspace = () => (
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/new" />} />
             <Route path="/new" component={Create} />
-            <Route path="/diagram" component={Diagram} />
-            <Route path="/code" component={() => <div>Code</div>} />
+            <Route path="/edit" component={Diagram} />
+            <Route path="/code" component={Code} />
+            <Route path="/visual" component={() => <h1>Visualize</h1>} />
             <Route component={NotFound} />
           </Switch>
         </section>

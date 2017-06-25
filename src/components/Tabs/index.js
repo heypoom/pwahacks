@@ -5,7 +5,7 @@ import s from "./Tab.sass"
 
 const Tabs = () => (
   <div className={s.tabs}>
-    {["/new", "/diagram", "/code", "/visual"].map(route => (
+    {["/new", "/edit", "/code", "/visual"].map(route => (
       <NavLink to={route} key={route} className={s.tab} activeClassName={s.active}>
         {route.substring(1)}
       </NavLink>
