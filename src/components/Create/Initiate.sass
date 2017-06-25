@@ -15,12 +15,15 @@ section.welcome
   flex-direction: column
   min-height: 10em
   color: white
-  background: #9C27B0
+  background: $primary
   // background: #9C27B0
   padding: 1em 1em
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
   position: relative
   z-index: 1
+
+  @media screen and (max-width: $breakpoint)
+    padding: 1.6em 1em
 
   h1
     margin: 0
