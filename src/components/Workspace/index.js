@@ -47,6 +47,6 @@ const Workspace = () => (
   </div>
 )
 
-const mapStateToProps = state => ({file: state.app.file})
+const mapStateToProps = state => ({file: state.app.code})
 
 export default withRouter(connect(mapStateToProps)(Workspace))

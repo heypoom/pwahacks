@@ -1,8 +1,27 @@
+.root
+  width: 100%
+  height: 100%
+  min-height: 70vh
+  background: #374046
+  // background: #efefef
+  // padding: 1.5em 2em
+
 .code
-  margin-top: 0.8em
+  color: white
+  background: transparent !important
   font-family: "Fira Code"
-  line-height: 1.8em
-  max-width: 550px
+  line-height: 1.6em
+  font-weight: 300
   white-space: pre-wrap
-  max-height: 300px
-  overflow-y: scroll
+  width: 100% !important
+  height: 100% !important
+  min-height: 500px
+
+\:global
+   .ace_editor.ace_dark.ace-twilight
+    .ace_gutter
+      color: white
+      background: rgba(0, 0, 0, 0.05) !important
+
+    .ace_gutter-active-line
+      background: rgba(0, 0, 0, 0.15) !important

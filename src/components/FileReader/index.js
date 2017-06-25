@@ -3,11 +3,11 @@ import {connect} from "react-redux"
 import Dropzone from "react-dropzone"
 
 import parser from "../../core/parser"
-import {setFile} from "../../ducks/app"
+import {setCode} from "../../ducks/app"
 
 import s from "./FileReader.sass"
 
-const mapStateToProps = state => ({file: state.app.file})
+const mapStateToProps = state => ({file: state.app.code})
 
 const drop = (e, set) => {
   e.forEach(file => {
@@ -25,11 +25,11 @@ const sp = (
   <h1>That is <b>Awesome!</b> Go ahead and have fun!</h1>
 )
 
-const FileReader = ({success = sp, prompt = ph, file, setFile: set}) => (
+const FileReader = ({success = sp, prompt = ph, file, setCode: set}) => (
   <Dropzone className={s.root} onDrop={e => drop(e, set)}>
     <img src="/magnet.png" alt="" className={s.middleimg} />
     {file ? success : prompt}
   </Dropzone>
 )
 
-export default connect(mapStateToProps, {setFile})(FileReader)
+export default connect(mapStateToProps, {setCode})(FileReader)

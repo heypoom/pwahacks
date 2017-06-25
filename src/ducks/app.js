@@ -1,11 +1,11 @@
 import {createReducer, makeAction} from "../core"
 
-export const setFile = makeAction("SET_FILE")
+export const setCode = makeAction("SET_CODE")
 
 const initial = {
-  file: ""
+  code: ""
 }
 
 export default createReducer(initial, state => ({
-  SET_FILE: file => ({...state, file})
+  SET_CODE: code => ({...state, code})
 }))
