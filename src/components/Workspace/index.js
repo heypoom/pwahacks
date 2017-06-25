@@ -33,8 +33,8 @@ const Workspace = () => (
         <section className={s.workspace}>
           <Tabs />
           <Switch>
-            <Route exact path="/" render={() => <Redirect to="/create" />} />
-            <Route path="/create" component={Create} />
+            <Route exact path="/" render={() => <Redirect to="/new" />} />
+            <Route path="/new" component={Create} />
             <Route path="/diagram" component={Diagram} />
             <Route path="/code" component={() => <div>Code</div>} />
             <Route component={NotFound} />
