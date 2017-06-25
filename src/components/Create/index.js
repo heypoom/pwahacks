@@ -11,7 +11,7 @@ import s from "./Create.sass"
 const Create = ({setCode: set}) => (
   <div className={s.initial}>
     <section className={s.welcome}>
-      <h1>{"Welcome to Pack=>Tastic!"}</h1>
+      <h1>Welcome to Pack=>t<b>ast</b>ic!</h1>
       <p>
         Let's Explore and Visualize the Inner Workings of JavaScript!
       </p>
