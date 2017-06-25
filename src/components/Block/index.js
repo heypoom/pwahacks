@@ -6,12 +6,16 @@ import s from "./Block.sass"
 const getStyle = (text) => {
   let color
 
-  if (text.indexOf("Declaration") > -1) {
-    color = "#1abc9c"
-  } else if (text.indexOf("Expression") > -1) {
-    color = "#e74c3c"
-  } else if (text.indexOf("Literal") > -1) {
-    color = "#3498db"
+  if (text) {
+    if (text.indexOf("Declaration") > -1) {
+      color = "#1abc9c"
+    } else if (text.indexOf("Expression") > -1) {
+      color = "#e74c3c"
+    } else if (text.indexOf("Literal") > -1) {
+      color = "#3498db"
+    } else {
+      color = "rgb(124, 77, 255)"
+    }
   } else {
     color = "rgb(124, 77, 255)"
   }

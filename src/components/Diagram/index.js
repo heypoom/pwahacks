@@ -41,8 +41,8 @@ const Diagram = ({code}) => {
             return (
               <Draggable defaultPosition={{x: 0, y: i * 15}} key={i} >
                 <div className={s.group}>
-                  {block.map(item => (
-                    <Block g y={0} text={item} key={item} />
+                  {block.map((item, index) => (
+                    <Block g y={0} text={item} key={index} />
                   ))}
                 </div>
               </Draggable>

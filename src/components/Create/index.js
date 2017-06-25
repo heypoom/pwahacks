@@ -13,7 +13,7 @@ const Create = ({setCode: set}) => (
     <section className={s.welcome}>
       <h1>{"Welcome to Pack=>Tastic!"}</h1>
       <p>
-        {"JavaScript is scary? Fear no more! We're here to make it Fantastic again!"}
+        Let's Explore and Visualize the Inner Workings of JavaScript!
       </p>
     </section>
     <section className={s.upload}>
