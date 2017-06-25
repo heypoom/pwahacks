@@ -1,14 +1,14 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import {withRouter, NavLink} from "react-router-dom"
 
 import s from "./Tab.sass"
 
-const Tabs = ({tab}) => (
+const Tabs = () => (
   <div className={s.tabs}>
     {["create", "diagram", "code", "visualize"].map(route => (
-      <Link to={route} key={route} className={s.tab}>
+      <NavLink to={route} key={route} className={s.tab} isActive={console.log}>
         {route}
-      </Link>
+      </NavLink>
     ))}
   </div>
 )
