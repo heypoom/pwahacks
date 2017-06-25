@@ -26,14 +26,18 @@ const Create = () => (
 
 const Workspace = () => (
   <div className={s.root}>
-    <div className={s.topbar}>
-      <h1>Pack=><b>tastic</b><small>make webpack fantastic again!</small></h1>
-    </div>
     <div className={s.view}>
       <nav className={s.sidebar}>
+        <div className={s.titlebar}>
+          Packtastic
+          <div className={s.buttons} />
+        </div>
         <Terminal />
       </nav>
       <main className={s.main}>
+        <div className={s.topbar}>
+          <h1>Pack=><b>tastic</b><small>make webpack fantastic again!</small></h1>
+        </div>
         <section className={s.workspace}>
           <Tabs />
           <Switch>
