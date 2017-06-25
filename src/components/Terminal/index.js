@@ -29,6 +29,7 @@ export default class Terminal extends Component {
       </div>
       <input
         className={s.term}
+        aria-label="terminal"
         onKeyPress={this.handleTerm}
         onChange={this.onChange}
       />

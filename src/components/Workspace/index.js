@@ -2,25 +2,17 @@ import React from "react"
 import {connect} from "react-redux"
 import {withRouter, Route, Redirect, Switch} from "react-router-dom"
 
-import FileReader from "../../components/FileReader"
-import Terminal from "../../components/Terminal"
-import Tabs from "../../components/Tabs"
+import Tabs from "../Tabs"
+import Terminal from "../Terminal"
 
-import Diagram from "../../components/Diagram"
+import Create from "../Create"
+import Diagram from "../Diagram"
 
 import s from "./Workspace.sass"
 
 const NotFound = () => (
   <div className={s.notfound}>
     <h1><b>Uh Oh.</b> How did you get here!?</h1>
-  </div>
-)
-
-const Create = () => (
-  <div className={s.initial}>
-    <div className={s.contain}>
-      <FileReader />
-    </div>
   </div>
 )
 
